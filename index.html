@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Катюше</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(45deg, #ffb7c5, #ffdde1);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(255, 105, 107, 0.3);
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            animation: appear 1.2s ease-out;
+        }
+
+        .photo-frame {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 4px solid white;
+            box-shadow: 0 0 25px rgba(255, 105, 107, 0.2);
+            transition: transform 0.4s;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.05) rotate(8deg);
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #ff6b6b;
+            margin: 25px 0;
+            opacity: 0;
+            animation: textFlow 1.2s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .simple-text {
+            font-size: 1.8rem;
+            color: #444;
+            margin-top: 15px;
+            opacity: 0;
+            animation: fadeHeart 1s ease-in forwards;
+            animation-delay: 1.2s;
+        }
+
+        @keyframes appear {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes textFlow {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeHeart {
+            0% { opacity: 0; transform: scale(0.5); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .hearts span {
+            position: absolute;
+            color: #ff6b6b;
+            animation: float 3s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-500px) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="photo-frame">
+            <img src="image.png" alt="Катюша" class="photo">
+        </div>
+
+        <div class="main-quote">"Il tuo sorriso è la mia felicità"</div>
+        <div class="simple-text">Катюша, спасибо, что ты есть</div>
+        
+        <!-- Анимация сердечек -->
+        <div class="hearts">
+            <span style="left:10%; animation-delay:0.5s">♥</span>
+            <span style="left:30%; animation-delay:1.2s">♥</span>
+            <span style="left:50%; animation-delay:2.1s">♥</span>
+            <span style="left:70%; animation-delay:0.8s">♥</span>
+            <span style="left:90%; animation-delay:1.7s">♥</span>
+        </div>
+    </div>
+</body>
+</html>
